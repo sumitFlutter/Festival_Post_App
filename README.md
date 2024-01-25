@@ -15,6 +15,6 @@ For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
 <p>
-  <img src=https://github.com/sumitFlutter/Festival_Post_App/assets/153794386/04a612f6-90d4-4760-bc93-cedd46b0a44a    height=200px,width=200px  />
+  <img src="https://github.com/sumitFlutter/Festival_Post_App/assets/153794386/04a612f6-90d4-4760-bc93-cedd46b0a44a"    height="200px",width="200px"  />
 
 </p>
