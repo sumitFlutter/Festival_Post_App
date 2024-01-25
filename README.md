@@ -16,5 +16,8 @@ For help getting started with Flutter development, view the
 samples, guidance on mobile development, and a full API reference.
 <p>
   <img src="https://github.com/sumitFlutter/Festival_Post_App/assets/153794386/04a612f6-90d4-4760-bc93-cedd46b0a44a"    height="200px",width="200px"  />
+   <img src="https://github.com/sumitFlutter/Festival_Post_App/assets/153794386/c9463a0c-8148-4c4e-b98d-a3c67b385120"
+height="200px",width="200px"  />
+
 
 </p>
