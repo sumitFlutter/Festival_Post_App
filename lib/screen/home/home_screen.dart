@@ -9,6 +9,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  bool isList =true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -16,17 +17,25 @@ class _HomeScreenState extends State<HomeScreen> {
         leading: Padding(
           padding: const EdgeInsets.all(25.0),
           child: const Icon(
-              Icons.search,
-              size: 28,
-              color: Colors.black,
-            ),
+            Icons.search,
+            size: 28,
+            color: Colors.black,
           ),
-        actions: const [
-          Padding(
-            padding: EdgeInsets.all(25.0),
-            child: Icon(
-              Icons.list,
-              color: Colors.black,
+        ),
+        actions: [
+          InkWell(
+            onTap: () {
+              setState(() {
+                isList=!isList;
+              });
+            },
+            child: Padding(
+              padding: EdgeInsets.all(25.0),
+              child: isList?Icon(
+                Icons.grid_3x3,
+                color: Colors.black,
+              ):
+                  const Icon(Icons.list)
             ),
           )
         ],
@@ -60,8 +69,7 @@ class _HomeScreenState extends State<HomeScreen> {
             height: 20,
           ),
           Expanded(
-            child: ListView.builder(
-                // scrollDirection: Axis.horizontal,
+            child: isList?ListView.builder(
                 itemCount: festivals.length,
                 itemBuilder: (context, index) => Column(
                       children: [
@@ -77,8 +85,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             Text(
                               festivals[index]["name"],
                               style: TextStyle(
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.bold),
+                                  fontSize: 18, fontWeight: FontWeight.bold),
                             ),
                             Icon(
                               Icons.arrow_forward_ios,
@@ -90,8 +97,20 @@ class _HomeScreenState extends State<HomeScreen> {
                           height: 20,
                         ),
                       ],
-                    )),
+                    )):
+            GridView.builder(
+              gridDelegate:
+              SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
+              itemCount: festivals.length,
+              itemBuilder: (context, index) {
+                return Padding(
+                  padding: const EdgeInsets.all(10),
+                  child: Image.asset(festivals[index]["image"],height: 150,width: 150,),
+                );
+              },
+            )
           ),
+
         ]),
       ),
     );
