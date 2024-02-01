@@ -77,7 +77,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 Text(
                                   festivals[index]["name"],
                                   style:  TextStyle(
-                                      fontSize: 25, fontWeight: FontWeight.bold,fontFamily:"sumit" ),
+                                      fontSize: 25, fontWeight: FontWeight.bold,fontFamily:"s1" ),
                                 ),
                                 const Icon(
                                   Icons.arrow_forward_ios,
