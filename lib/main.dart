@@ -7,6 +7,9 @@ import 'package:flutter/services.dart';
 void main()
 {
   use();
+  randomNumber();
+  colorAdd();
+  mainColor.shuffle();
   runApp(
     MaterialApp(
       debugShowCheckedModeBanner: false,

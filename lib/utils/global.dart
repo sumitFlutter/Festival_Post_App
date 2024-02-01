@@ -1,16 +1,27 @@
-import '../model/image_model.dart';
+import 'dart:math';
 
+import 'package:flutter/material.dart';
+
+import '../model/image_model.dart';
+int? i;
+List <int> random=[1,2,3,4,5,6,7,8,9,10];
+int randomNumber()
+{
+  random.shuffle();
+  i=random[1];
+  return i!;
+}
 List <Map> festivals=[
-  {"image":"assets/image/festivals/diwali/1.jpg","name":"Diwali"},
-  {"image":"assets/image/festivals/new_year/1.jpg","name":"New Year"},
-  {"image":"assets/image/festivals/holi/1.jpg","name":"Holi"},
-  {"image":"assets/image/festivals/makar/1.jpg","name":"Makar Sankantri"},
-  {"image":"assets/image/festivals/bhai/1.jpg","name":"Bhai Dooj"},
-  {"image":"assets/image/festivals/raksha/1.jpg","name":"Rakshabandhan"},
-  {"image":"assets/image/festivals/maha/1.jpg","name":"Maha Shivratri"},
-  {"image":"assets/image/festivals/ram/1.jpg","name":"Ram Navmi"},
-  {"image":"assets/image/festivals/krishna/1.jpg","name":"Janmashtami"},
-  {"image":"assets/image/festivals/25/1.jpg","name":"Christmas"},
+  {"image":"assets/image/festivals/diwali/$i.jpg","name":"Diwali"},
+  {"image":"assets/image/festivals/new_year/$i.jpg","name":"New Year"},
+  {"image":"assets/image/festivals/holi/$i.jpg","name":"Holi"},
+  {"image":"assets/image/festivals/makar/$i.jpg","name":"Makar Sankantri"},
+  {"image":"assets/image/festivals/bhai/$i.jpg","name":"Bhai Dooj"},
+  {"image":"assets/image/festivals/raksha/$i.jpg","name":"Rakshabandhan"},
+  {"image":"assets/image/festivals/maha/$i.jpg","name":"Maha Shivratri"},
+  {"image":"assets/image/festivals/ram/$i.jpg","name":"Ram Navmi"},
+  {"image":"assets/image/festivals/krishna/$i.jpg","name":"Janmashtami"},
+  {"image":"assets/image/festivals/25/$i.jpg","name":"Christmas"},
 ];
 List<Map> image=[
   {"1":"assets/image/festivals/diwali/1.jpg","2":"assets/image/festivals/diwali/2.jpg","3":"assets/image/festivals/diwali/3.jpg","4":"assets/image/festivals/diwali/4.jpg","5":"assets/image/festivals/diwali/5.jpg","6":"assets/image/festivals/diwali/6.jpg","7":"assets/image/festivals/diwali/7.jpg","8":"assets/image/festivals/diwali/8.jpg","9":"assets/image/festivals/diwali/9.jpg","10":"assets/image/festivals/diwali/10.jpg"},
@@ -28,4 +39,9 @@ List<ImageModel> model=[];
 void use()
 {
   model=image.map((e) => ImageModel.setImage(e)).toList();
+}
+List mainColor=[];
+void colorAdd()
+{
+  mainColor.addAll(Colors.primaries);
 }
