@@ -17,7 +17,6 @@ class FestivalViewScreen extends StatefulWidget {
 
 class _FestivalViewScreenState extends State<FestivalViewScreen> {
   GlobalKey key = GlobalKey();
-  late String path;
   bool textEdit = true;
   bool bgI = false;
   bool background = true;
@@ -85,14 +84,15 @@ class _FestivalViewScreenState extends State<FestivalViewScreen> {
               }, icon: const Icon(Icons.refresh)),
               IconButton(
                   onPressed: ()  {
-                   saveAndShare();
+                   save();
                    ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("Your Image SuccessFully Saved In Downloads",style: TextStyle(color: Colors.black)),backgroundColor: Colors.white,));
                   },
                   icon: const Icon(Icons.save)),
               IconButton(
-                  onPressed: ()  async{
-                    saveAndShare();
-                    final result = await Share.shareXFiles([XFile(path)], text: 'Great picture');
+                  onPressed: ()  {
+
+                    share();
+
                   },
                   icon: const Icon(Icons.share))
             ],
@@ -630,18 +630,30 @@ class _FestivalViewScreenState extends State<FestivalViewScreen> {
       ),
     );
   }
-  Future<String> saveAndShare()
+  void save()
   async{
     RenderRepaintBoundary b1 = key.currentContext!
         .findRenderObject() as RenderRepaintBoundary;
     ui.Image image = await b1.toImage(pixelRatio: 5);
     ByteData? byteData =
         await image.toByteData(format: ui.ImageByteFormat.png);
-     path =
+     String path =
         "/storage/emulated/0/Download/IMG${DateTime.now()}.png";
     await File(path)
         .writeAsBytes(byteData!.buffer.asUint8List());
-    return path;
+  }
+  void share()
+  async{
+    RenderRepaintBoundary b1 = key.currentContext!
+        .findRenderObject() as RenderRepaintBoundary;
+    ui.Image image = await b1.toImage(pixelRatio: 5);
+    ByteData? byteData =
+    await image.toByteData(format: ui.ImageByteFormat.png);
+    String path =
+        "/storage/emulated/0/Download/IMG${DateTime.now()}.png";
+    await File(path)
+        .writeAsBytes(byteData!.buffer.asUint8List());
+    final result = await Share.shareXFiles([XFile(path)], text: 'Great picture');
   }
 
 }
