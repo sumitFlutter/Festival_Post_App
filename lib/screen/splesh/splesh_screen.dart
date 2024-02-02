@@ -25,7 +25,6 @@ class _SpleshScreenState extends State<SpleshScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Center(child: Image.asset("assets/logo_image/1.png",height: 100,width: 100,fit: BoxFit.contain,)),
-            SizedBox(height: 7,),
             const Center(child: Text("Festival Post Maker",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white),),)
             ],
           )
