@@ -19,13 +19,13 @@ class _SpleshScreenState extends State<SpleshScreen> {
     return SafeArea(child: Scaffold(
       body: Stack(
         children: [
-          Image.asset("assets/bg_images/splesh.jpg",height: MediaQuery.sizeOf(context).height,
-          width: MediaQuery.sizeOf(context).width,fit: BoxFit.fill,),
+          Image.asset("assets/bg_images/1.jpg",height: MediaQuery.sizeOf(context).height,
+          width: MediaQuery.sizeOf(context).width,fit: BoxFit.cover,),
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Center(child: Image.asset("assets/logo_image/1.png",height: 100,width: 100,fit: BoxFit.contain,)),
-            const Center(child: Text("Festival Post Maker",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white),),)
+              Center(child: Image.asset("assets/logo_image/1.png",height: 110,width: 110,fit: BoxFit.contain,)),
+            const Center(child: Text("Festival Post Maker",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.black,fontFamily: "s2",fontSize: 18),),)
             ],
           )
         ],
