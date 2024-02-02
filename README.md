@@ -17,7 +17,7 @@ samples, guidance on mobile development, and a full API reference.
 
 
 
-
+<p>
 <img src="https://github.com/sumitFlutter/Festival_Post_App/assets/153794386/19a1a3ed-8189-4567-b4b8-b28ff7db47c9"
 height="400px" width="200px"     />
   <img src="https://github.com/sumitFlutter/Festival_Post_App/assets/153794386/e7aeee4f-b430-4f85-8af4-53cff027aa35"
@@ -30,4 +30,11 @@ height="400px" width="200px"     />
   height="400px" width="200px"     />
     <img src="https://github.com/sumitFlutter/Festival_Post_App/assets/153794386/0e7c2a5b-4825-400a-8e80-fcb47ca7b835"
   height="400px" width="200px"     />
+  <video>
+    
+
+https://github.com/sumitFlutter/Festival_Post_App/assets/153794386/966d89f4-ed75-4067-998d-c10cdec394ba
+
+
+  </video>
 </p>
